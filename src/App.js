@@ -256,8 +256,8 @@ function App() {
                 addressSuite={usersList[0].address}
                 addressCity={usersList[0].address}
                 addressZipcode={usersList[0].address}
-                addressGeoLat={usersList[0].address}
-                addressGeoLng={usersList[0].address}
+                addressGeoLat={usersList[0].address.geo}
+                addressGeoLng={usersList[0].address.geo}
             />
 
 

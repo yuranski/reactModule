@@ -32,8 +32,8 @@ export function UsersAdd({
                 suite={addressSuite.suite}
                 city={addressCity.city}
                 zipcode={addressZipcode.zipcode}
-                addressGeoLat={addressGeoLat.geo}
-                addressGeoLng={addressGeoLng.geo}
+                addressGeoLat={addressGeoLat}
+                addressGeoLng={addressGeoLng}
             />
         </div>
     );
