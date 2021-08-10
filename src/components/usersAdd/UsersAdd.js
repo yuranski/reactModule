@@ -28,10 +28,10 @@ export function UsersAdd({
             <p>{username}</p>
             <p>{email}</p>
             <AddressAdd
-                street={addressStreet.street}
-                suite={addressSuite.suite}
-                city={addressCity.city}
-                zipcode={addressZipcode.zipcode}
+                street={addressStreet}
+                suite={addressSuite}
+                city={addressCity}
+                zipcode={addressZipcode}
                 addressGeoLat={addressGeoLat}
                 addressGeoLng={addressGeoLng}
             />

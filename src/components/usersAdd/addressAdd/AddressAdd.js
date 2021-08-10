@@ -8,8 +8,8 @@ export function AddressAdd({street, suite, city, zipcode, addressGeoLat, address
             <p>{suite}</p>
             <p>{city}</p>
             <p>{zipcode}</p>
-            <UsersGeo lat={addressGeoLat.lat}
-                      lng={addressGeoLng.lng}/>
+            <UsersGeo lat={addressGeoLat}
+                      lng={addressGeoLng}/>
         </div>
     );
 }

@@ -252,12 +252,12 @@ function App() {
                 name={usersList[0].name}
                 username={usersList[0].username}
                 email={usersList[0].email}
-                addressStreet={usersList[0].address}
-                addressSuite={usersList[0].address}
-                addressCity={usersList[0].address}
-                addressZipcode={usersList[0].address}
-                addressGeoLat={usersList[0].address.geo}
-                addressGeoLng={usersList[0].address.geo}
+                addressStreet={usersList[0].address.street}
+                addressSuite={usersList[0].address.suite}
+                addressCity={usersList[0].address.city}
+                addressZipcode={usersList[0].address.zipcode}
+                addressGeoLat={usersList[0].address.geo.lat}
+                addressGeoLng={usersList[0].address.geo.lng}
             />
 
 
