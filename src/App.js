@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import {Users} from "./components/users/users";
+import {UsersAdd} from "./components/usersAdd/usersAdd";
+
 
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {/*<Users i={0}/>*/}
+        {/*<Users i={1}/>*/}
+        {/*<Users i={2}/>*/}
+        {/*<Users i={3}/>*/}
+        {/*<Users i={4}/>*/}
+
+        <UsersAdd userNumber={1}/>
+
+
     </div>
   );
 }
