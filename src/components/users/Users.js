@@ -20,8 +20,7 @@ export function Users() {
     return (
         <div>
             {users.map(value => <User key={value.id} item={value} posts={posts}/>)}
-            //TODO Key не знаю как вписати Help!
-            {userPost && userPost.map((value, index) => <p>{value.body}</p>)}
+            {userPost && userPost.map((value, index) => <p>{index.id} {value.body}</p>)}
         </div>
     )
 }
