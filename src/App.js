@@ -6,9 +6,9 @@ import {Users} from "./components/users/Users";
 function App() {
   return (
     <div>
-        {/*<Posts/>*/}
+        <Posts/>
         {/*<Comments/>*/}
-        <Users/>
+        {/*<Users/>*/}
     </div>
   );
 }
