@@ -1,7 +1,7 @@
-export function Car({model,price,year}){
+export function Car({id,model,price,year}){
     return(
 
-        <div>{model} - {price} - {year}</div>
+        <div>{id} - {model} - {price} - {year}</div>
 
     )
 }

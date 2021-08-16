@@ -12,20 +12,35 @@ export function CarsForm(){
 
     let [value,setValue] = useState({model:'',price:'',year:''})
 
+    let [lastIndexArr,setLastIndexArr] = useState([])
+
     useEffect(() => {
-        getCars().then(value => setCars([...value]))
+        getCars().then(value => {
+            setCars([...value])
+            setLastIndexArr([...value])
+        })
     },[])
 
 
     const onSubForm = (e) => {
-        // e.preventDefault()
+        e.preventDefault()
         let tempValue = {model,price,year}
         setValue({...tempValue})
         saveValueCars(tempValue).then()
+
+        console.log(model.length)
     }
+
+
 
     const onInputChangeModel = (e) => {
         setModels(e.target.value)
+
+        if(model.length <= 20){
+            console.log('asd')
+        } else {
+            console.log('333')
+        }
     }
     const onInputChangePrice = (e) => {
         setPrice(e.target.value)
@@ -33,7 +48,6 @@ export function CarsForm(){
     const onInputChangeYear = (e) => {
         setYear(e.target.value)
     }
-
 
     return(
         <div>
@@ -43,11 +57,12 @@ export function CarsForm(){
                 <input type="text" name={year} onInput={onInputChangeYear} placeholder="Рік машини"/>
                 <button>Submit</button>
             </form>
-            {cars.map(value => <Car key={value.id}
-                                    model={value.model}
-                                    price={value.price}
-                                    year={value.year}/>)
-                .filter(value1 => value.length > value1.length)}
+
+            {cars.filter(value => value.id > lastIndexArr.length + 75).map(value =>  <Car key={value.id}
+                                                                      id={value.id}
+                                                                      model={value.model}
+                                                                      price={value.price}
+                                                                      year={value.year}/>)}
         </div>
     )
 }
