@@ -1,0 +1,9 @@
+.errorValidRed{
+    border: red 3px solid;
+}
+
+.errorValidGreen{
+    border: green 3px solid;
+}
+
+input {outline: 0 !important;}
