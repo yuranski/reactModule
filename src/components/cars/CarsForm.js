@@ -55,7 +55,6 @@ export function CarsForm() {
             e.target.className = "errorValidRed"
         }
     }
-
     const onInputChangeYear = (e) => {
         if (e.target.value >= 1990 && e.target.value <= 2021) {
             setDisableYear(false)
