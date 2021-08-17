@@ -6,4 +6,8 @@
     border: green 3px solid;
 }
 
+.dispFlex{
+    display: flex;
+}
+
 input {outline: 0 !important;}
