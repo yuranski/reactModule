@@ -66,6 +66,10 @@ export function CarsForm() {
         }
     }
 
+    function deleted(e){
+        console.log('asd')
+    }
+
     return (
         <div>
             <form onSubmit={onSubForm}>
@@ -79,7 +83,8 @@ export function CarsForm() {
                                                                                          id={value.id}
                                                                                          model={value.model}
                                                                                          price={value.price}
-                                                                                         year={value.year}/>)}
+                                                                                         year={value.year}
+                                                                                         deleted={deleted}/>)}
         </div>
     )
 }
