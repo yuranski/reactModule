@@ -7,6 +7,7 @@ export function CarsForm() {
 
     let [cars, setCars] = useState([])
 
+    let [idCar, setIdCar] = useState([])
     let [model, setModels] = useState([])
     let [price, setPrice] = useState([])
     let [year, setYear] = useState([])
@@ -35,48 +36,40 @@ export function CarsForm() {
     }
 
     const onInputChangeModel = (e) => {
-        setValModel([model])
-            if (e.target.value.length <= 20 && e.target.value.length >= 1) {
-                setDisableModel(false)
-                setModels(e.target.value)
-                e.target.className = "errorValidGreen"
-            } else {
-                setDisableModel(true)
-                e.target.className = "errorValidRed"
-            }
+        if (e.target.value.length <= 20 && e.target.value.length >= 1) {
+            setDisableModel(false)
+            setModels(e.target.value)
+            e.target.className = "errorValidGreen"
+        } else {
+            setDisableModel(true)
+            e.target.className = "errorValidRed"
+        }
     }
     const onInputChangePrice = (e) => {
-        setValPrice([price])
-            if (e.target.value > 0) {
-                setDisablePrice(false)
-                setPrice(e.target.value)
-                e.target.className = "errorValidGreen"
-            } else {
-                setDisablePrice(true)
-                e.target.className = "errorValidRed"
-            }
+        if (e.target.value > 0) {
+            setDisablePrice(false)
+            setPrice(e.target.value)
+            e.target.className = "errorValidGreen"
+        } else {
+            setDisablePrice(true)
+            e.target.className = "errorValidRed"
+        }
     }
     const onInputChangeYear = (e) => {
-        setValYear([year])
-            if (e.target.value >= 1990 && e.target.value <= 2021) {
-                setDisableYear(false)
-                setYear(e.target.value)
-                e.target.className = "errorValidGreen"
-            } else {
-                setDisableYear(true)
-                e.target.className = "errorValidRed"
-            }
+        if (e.target.value >= 1990 && e.target.value <= 2021) {
+            setDisableYear(false)
+            setYear(e.target.value)
+            e.target.className = "errorValidGreen"
+        } else {
+            setDisableYear(true)
+            e.target.className = "errorValidRed"
+        }
     }
 
     function deleted(id) {
         deletedCarId(id).then()
     }
 
-
-    let [valId, setValId] = useState([]);
-    let [valModel, setValModel] = useState([]);
-    let [valPrice, setValPrice] = useState([]);
-    let [valYear, setValYear] = useState([]);
 
     let [colorEdit, setColorEdit] = useState([])
 
@@ -94,25 +87,25 @@ export function CarsForm() {
         setColorEdit([green2.className = 'errorValidGreen'])
         setColorEdit([green3.className = 'errorValidGreen'])
 
-        setValId([id])
-        setValModel([model])
-        setValPrice([price])
-        setValYear([year])
+        setIdCar([id])
+        setModels([model])
+        setPrice([price])
+        setYear([year])
     }
 
     function changeBtn() {
-        refresh(valId, model, price, year).then()
+        refresh(idCar, model, price, year).then()
     }
 
     return (
         <div>
             <div className={'dispFlex'}>
                 <form onSubmit={onSubForm}>
-                    <input id='green1' defaultValue={valModel} type="text" name={model} onInput={onInputChangeModel}
+                    <input id='green1' defaultValue={model} type="text" onInput={onInputChangeModel}
                            placeholder="Модель машини"/>
-                    <input id='green2' defaultValue={valPrice} type="text" name={price} onInput={onInputChangePrice}
+                    <input id='green2' defaultValue={price} type="text" onInput={onInputChangePrice}
                            placeholder="Ціна машини"/>
-                    <input id='green3' defaultValue={valYear} type="text" name={year} onInput={onInputChangeYear}
+                    <input id='green3' defaultValue={year} type="text" onInput={onInputChangeYear}
                            placeholder="Рік машини"/>
                     <button disabled={disableModel || disablePrice || disableYear || editFlag}>Submit</button>
                 </form>
