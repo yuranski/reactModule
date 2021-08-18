@@ -7,7 +7,7 @@ export function Posts() {
     let [post, setPosts] = useState([]);
     useEffect(() => {
         getPosts().then(value => {setPosts([...value])})
-    })
+    },[])
 
 
     return (

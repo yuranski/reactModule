@@ -7,7 +7,7 @@ export function Comments() {
     let [comments, setComments] = useState([]);
     useEffect(() => {
         getComments().then(value => {setComments([...value])})
-    })
+    },[])
 
 
     return (

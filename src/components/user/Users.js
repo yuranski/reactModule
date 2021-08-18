@@ -7,7 +7,7 @@ export function Users() {
     let [users, setUsers] = useState([]);
     useEffect(() => {
         getUsers().then(value => {setUsers([...value])})
-    })
+    },[])
 
 
     return (
