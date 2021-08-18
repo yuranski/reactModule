@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getUsers} from "../../services/users.services";
+import {User} from "./User";
 
 export function Users() {
 
@@ -10,7 +11,7 @@ export function Users() {
 
 
     return (
-        <div>{users.map(value => <div key={value.id}>{value.id}-{value.name}</div>)}</div>
+        <div>{users.map(value => <User key={value.id} item={value}/>)}</div>
     )
 }
 

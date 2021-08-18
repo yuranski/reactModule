@@ -11,6 +11,6 @@ export function Posts() {
 
 
     return (
-        <div>{post.map(value => <Post key={value.id} id={value.id} title={value.title}/>)}</div>
+        <div>{post.map(value => <Post key={value.id} item={value}/>)}</div>
     )
 }

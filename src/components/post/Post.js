@@ -1,4 +1,4 @@
-export function Post({id,title}) {
+export function Post({item: {id,title}}) {
     return (
         <div>{id}-{title}</div>
     )

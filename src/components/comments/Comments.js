@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {getPosts} from "../../services/posts.services";
 import {getComments} from "../../services/comments.services";
+import {Comment} from "./Comment";
 
 export function Comments() {
 
@@ -11,6 +11,6 @@ export function Comments() {
 
 
     return (
-        <div>{comments.map(value => <div key={value.id}>{value.id}-{value.name}</div>)}</div>
+        <div>{comments.map(value => <Comment item={value} key={value.id}/>)}</div>
     )
 }
