@@ -3,12 +3,38 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore,applyMiddleware} from 'redux'
+import {Provider} from "react-redux";
+import {ADD_USER, LOAD_USERS} from "./redux/actions";
+import ReduxThunk from "redux-thunk"
 
 
+let initialState = {
+    users: []
+}
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOAD_USERS :
+            return {...state, users: [...action.payload]}
+            // return {...state, users: action.payload}
+
+        case ADD_USER :
+            return {...state, users: [...state.users, action.payload]}
+
+        default:
+            return state
+
+    }
+}
+
+
+let store = createStore(reducer,applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
     <React.StrictMode>
+        <Provider store={store}>
             <App/>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );
