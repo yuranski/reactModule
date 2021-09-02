@@ -9,20 +9,16 @@ import {createStore} from "redux"
 
 let initialStore = {
     nameFilm: [],
-    imgPoster: []
+    imgPoster: [],
+    genres: [],
 }
 let reducer = (state = initialStore, action) => {
     switch (action.type) {
-        case "ADD" : {
-            return {...state, name: [...state.name, action.payload]}
+        case "NAME" : {
+            return {...state, nameFilm: [...state.nameFilm, action.payload]}
         }
-        case "DELETED" : {
-
-            for (let i = 0; i < state.length; i++) {
-                const stateElement = state[i];
-                console.log(stateElement)
-            }
-            return {...state, name: action.payload}
+        case "IMG" : {
+            return {...state, imgPoster: [...state.imgPoster, action.payload]}
         }
         default:
             return state

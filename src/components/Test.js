@@ -1,12 +1,10 @@
 import {useEffect, useState} from "react";
 import {discoverMovie, genresMovie} from "../sercives/movie.service";
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
+import './style.css';
 
 export function Test() {
-
-
-
 
     let state = useSelector(state => state);
     let dispatch = useDispatch()
@@ -15,36 +13,16 @@ export function Test() {
 
     useEffect(() => {
         discoverMovie().then(value => {
-
-
-            for (const valueElement of value.data.results) {
-                // console.log(valueElement.title)
-                console.log(valueElement.poster_path)
-                //
-                nameFilm([...value.data.results])
-                imgPoster([valueElement.poster_path])
-
-                // setImg += valueElement.poster_path
+            for (const argument of value.data.results) {
+                dispatch({type: 'NAME', payload: argument})
             }
-
-
-            // setFilm([...value.data.results])
-            // console.log('1')
-            //
-            //
-            // for (const valueElement of value.data.results) {
-            //     console.log('2')
-            //     console.log(valueElement.poster_path)
-            //     setImg([valueElement.poster_path])
-            //     // setFilm([valueElement.poster_path])
-            // }
-
-
         })
     }, [])
 
     function xxx() {
-        console.log(img)
+        console.log(nameFilm)
+
+
     }
 
     return (
@@ -62,12 +40,18 @@ export function Test() {
 
             <button onClick={xxx}>ckick</button>
 
-            {film.map(value =>
-                <div>
-                    <img src={`https://image.tmdb.org/t/p/w300${img}`} alt="title"/>
-                    {value.title}
-                </div>)}
+            <div className="parent">
 
+                {nameFilm.map(value =>
+                    <div className="child " key={value.id}>
+                        <img src={'https://image.tmdb.org/t/p/w300/' + value.poster_path} alt={'Poster'}/>
+                        <br/>
+                        {value.title}
+                        <br/>
+                        Release - {value.release_date}
+                    </div>)}
+
+            </div>
         </div>
     )
 }
