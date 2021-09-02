@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {}
-
+import {Provider} from "react-redux";
+import {createStore} from "redux"
 
 
 let initialStore = {
-    name: [],
-    img: []
+    nameFilm: [],
+    imgPoster: []
 }
 let reducer = (state = initialStore, action) => {
     switch (action.type) {
@@ -29,9 +29,13 @@ let reducer = (state = initialStore, action) => {
     }
 }
 
+let store = createStore(reducer);
+
 ReactDOM.render(
     <React.StrictMode>
+        <Provider store={store}>
             <App/>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

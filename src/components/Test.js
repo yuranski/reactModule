@@ -1,17 +1,17 @@
 import {useEffect, useState} from "react";
 import {discoverMovie, genresMovie} from "../sercives/movie.service";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
 
 export function Test() {
 
 
 
 
+    let state = useSelector(state => state);
+    let dispatch = useDispatch()
+    let {nameFilm, imgPoster} = state
 
-
-
-    let [film, setFilm] = useState([]);
-    let [img, setImg] = useState([]);
 
     useEffect(() => {
         discoverMovie().then(value => {
@@ -21,8 +21,8 @@ export function Test() {
                 // console.log(valueElement.title)
                 console.log(valueElement.poster_path)
                 //
-                // setFilm([...value.data.results])
-                setImg([valueElement.poster_path])
+                nameFilm([...value.data.results])
+                imgPoster([valueElement.poster_path])
 
                 // setImg += valueElement.poster_path
             }
