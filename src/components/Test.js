@@ -8,7 +8,7 @@ export function Test() {
 
     let state = useSelector(state => state);
     let dispatch = useDispatch()
-    let {nameFilm, imgPoster} = state
+    let {nameFilm} = state
 
 
     useEffect(() => {
@@ -21,8 +21,6 @@ export function Test() {
 
     function xxx() {
         console.log(nameFilm)
-
-
     }
 
     return (
@@ -38,17 +36,19 @@ export function Test() {
                 </Container>
             </Navbar>
 
-            <button onClick={xxx}>ckick</button>
+            {/*<button onClick={xxx}>ckick</button>*/}
 
             <div className="parent">
-
                 {nameFilm.map(value =>
-                    <div className="child " key={value.id}>
-                        <img src={'https://image.tmdb.org/t/p/w300/' + value.poster_path} alt={'Poster'}/>
+                    <div className="child" key={value.id}>
+
+
+                        <img className="scale" src={'https://image.tmdb.org/t/p/w300/' + value.poster_path}
+                             alt={'Poster'}/>
+
                         <br/>
-                        {value.title}
+                        <p> {value.title} <br/> ★ {value.vote_average}/10 IMDB <br/> Release - {value.release_date}</p>
                         <br/>
-                        Release - {value.release_date}
                     </div>)}
 
             </div>
