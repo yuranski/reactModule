@@ -1,0 +1,36 @@
+1. Розібратись з апішками, жанри і тд
+2. Навчитись їх приймати в любому вигляді
+3. Переробити приймання їхнє на через Редакс і Сервіси
+4. Зробити головну сторінку з включателем і виключателем чорної теми
+5. Підключити бустрап
+
+
+
+
+
+
+Чувак розказує за АПІШКИ
+https://youtu.be/vxUfx4aM5d8?t=2485
+
+
+
+API da6bb5126a43747a81aa1fa3080401b2
+GET https://api.themoviedb.org/3/movie/550?api_key=da6bb5126a43747a81aa1fa3080401b2
+KEY eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTZiYjUxMjZhNDM3NDdhODFhYTFmYTMwODA0MDFiMiIsInN1YiI6IjYxMmY0ODFlZmJlMz
+ZmMDA5MjIyNGM5YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3NQD8HbdX7qxQI53dwZ4vo3VA6mmwXWGk9xiUHTooO8
+
+
+
+
+
+Білий навігатор
+            <Navbar bg="light" variant="light">
+                <Container>
+                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
