@@ -19,7 +19,6 @@ ZmMDA5MjIyNGM5YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3NQD8HbdX7qxQI5
 
 
 
-Білий навігатор
             <Navbar bg="light" variant="light">
                 <Container>
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>

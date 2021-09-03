@@ -37,17 +37,23 @@ https://dribbble.com/search/movies%20web%20app
 2) Если вы используете react : в redux store должны лежать список фильмов, жанры
 (должны быть соответствующие редьюсеры). Если ангулар, то на ваше усмотрение
 3) Components:
+
+
+
  todo - Header
  todo - MoviesList (renders MoviesListCards)
- - MoviesListCard (contain all movie information)
+ todo - MoviesListCard (contain all movie information)
  todo - PosterPreview (movie image)
  todo - StarsRating
+
+
+
  - MovieInfo (contains label, description, badges)
  - GenreBadge
  - UserInfo (just hardcoded small circle and name)
 4) Containers:
  - MoviesPage основное задание:
-5) пагинация
+5) пагинация (нумерація сторінок)
 6) вторая (следующая) страница с расширеным описанием фильма
 (подразумевается роутинг). она должна открываться если
 пользователь кликнул на карточку с фильмом

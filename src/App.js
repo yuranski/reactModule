@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {discoverMovie, genresMovie} from "./sercives/movie.service";
-import {Test} from "./components/Test";
+import {Header} from "./components/Header";
+import {MoviesList} from "./components/MoviesList";
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
 
     return (
         <div>
-            <Test/>
+            <Header/>
+            <MoviesList/>
         </div>
     );
 }
