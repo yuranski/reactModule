@@ -2,6 +2,15 @@ import {useEffect} from "react";
 import {discoverMovie, genresMovie} from "../sercives/movie.service";
 import {useDispatch, useSelector} from "react-redux";
 import {MoviesListCard} from "./MoviesListCard";
+import {Header} from "./Header";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
+import {PostDetails} from "../PostDetails";
 
 export function MoviesList() {
 
@@ -23,29 +32,18 @@ export function MoviesList() {
     }, [])
 
 
-    function xxx() {
-        console.log(filmsInfo)
-        console.log(genres)
-    }
-
-
     return (
-        <div>
-            <button onClick={xxx}>asdasd</button>
-            {/*todo виправити className='parent' якщо буде час*/}
-
-
-            <div className='parent'>
-
-                {/*{genres.filter(genres.id === filmsInfo.id).map(value => <div>{value}<div/>)}*/}
-
-                {filmsInfo.map(value => <MoviesListCard key={value.id}
-                                                        poster_path={value.poster_path}
-                                                        title={value.title}
-                                                        vote_average={value.vote_average}
-                                                        release_date={value.release_date}
-                                                        genresIds={value.genre_ids}/>)}
+        <Router>
+            <div>
+                <div className='parent'>
+                    {filmsInfo.map(value => <MoviesListCard key={value.id}
+                                                            poster_path={value.poster_path}
+                                                            title={value.title}
+                                                            vote_average={value.vote_average}
+                                                            release_date={value.release_date}
+                                                            genresIds={value.genre_ids}/>)}
+                </div>
             </div>
-        </div>
+        </Router>
     )
 }

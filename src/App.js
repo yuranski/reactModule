@@ -5,16 +5,15 @@ import {discoverMovie, genresMovie} from "./sercives/movie.service";
 import {Header} from "./components/Header";
 import {MoviesList} from "./components/MoviesList";
 
+
 function App() {
 
 
-
-
     return (
-        <div>
-            <Header/>
-            <MoviesList/>
-        </div>
+            <div>
+                <Header/>
+                <MoviesList/>
+            </div>
     );
 }
 

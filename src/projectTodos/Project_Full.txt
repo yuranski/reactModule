@@ -1,11 +1,7 @@
-todo The Movies app 1. mockup download https://cssauthor.com/pinball-responsive-grid-style-blog-psd/
-
-todo 2. Movies Database. Register here: https://www.themoviedb.org/documentation/api 3. to ﬁnd your api key and token:
-
-todo 4. API is here: https://developers.themoviedb.org/3/discover/movie-discover
-
-todo 5. Some API info is here: https://www.themoviedb.org/settings/api
-
+The Movies app 1. mockup download https://cssauthor.com/pinball-responsive-grid-style-blog-psd/
+2. Movies Database. Register here: https://www.themoviedb.org/documentation/api 3. to ﬁnd your api key and token:
+4. API is here: https://developers.themoviedb.org/3/discover/movie-discover
+5. Some API info is here: https://www.themoviedb.org/settings/api
 
 6.  в помощь по визуализации компонентов они есть как для реакта так и для ангулара
 (не по прямым ссылкам представленным здесь, можете не использовать их если не хотите)
@@ -22,12 +18,6 @@ https://dribbble.com/shots/6461891-Media-store-idea-Movies
 https://dribbble.com/shots/6090855-Raymov-Website-streaming-movie
 https://dribbble.com/search/movies%20web%20app
 
-
-
-
-
-
-
 7. по структуре проекта:
 1) основные действия
 - getMovies
@@ -38,19 +28,17 @@ https://dribbble.com/search/movies%20web%20app
 (должны быть соответствующие редьюсеры). Если ангулар, то на ваше усмотрение
 3) Components:
 
-
-
  todo - Header
  todo - MoviesList (renders MoviesListCards)
  todo - MoviesListCard (contain all movie information)
  todo - PosterPreview (movie image)
  todo - StarsRating
 
+MovieInfo (contains label, description, badges)
 
+ todo - GenreBadge
+ todo - UserInfo (just hardcoded small circle and name)
 
- - MovieInfo (contains label, description, badges)
- - GenreBadge
- - UserInfo (just hardcoded small circle and name)
 4) Containers:
  - MoviesPage основное задание:
 5) пагинация (нумерація сторінок)

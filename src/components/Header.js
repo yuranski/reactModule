@@ -1,5 +1,6 @@
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Container, Image, Nav, Navbar} from "react-bootstrap";
 import {useState} from "react";
+import {UserInfo} from "./UserInfo";
 
 export function Header() {
 
@@ -25,6 +26,7 @@ export function Header() {
                         <Nav.Link href="#features">2020</Nav.Link>
                         <Nav.Link href="#pricing">2021</Nav.Link>
                         <button onClick={xxx}>Click</button>
+                        <UserInfo/>
                     </Nav>
                 </Container>
             </Navbar>
