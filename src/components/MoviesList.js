@@ -10,40 +10,25 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
-import {PostDetails} from "../PostDetails";
 
 export function MoviesList() {
 
     let state = useSelector(state => state);
-    let dispatch = useDispatch()
-    let {filmsInfo, genres} = state
+    let {filmsInfo} = state
 
-    useEffect(() => {
-        discoverMovie().then(value => {
-            for (const argument of value.data.results) {
-                dispatch({type: 'NAME', payload: argument})
-            }
-        })
-        genresMovie().then(value => {
-            for (const valueElement of value.data.genres) {
-                dispatch({type: 'GENRES', payload: valueElement})
-            }
-        })
-    }, [])
 
 
     return (
-        <Router>
-            <div>
-                <div className='parent'>
-                    {filmsInfo.map(value => <MoviesListCard key={value.id}
-                                                            poster_path={value.poster_path}
-                                                            title={value.title}
-                                                            vote_average={value.vote_average}
-                                                            release_date={value.release_date}
-                                                            genresIds={value.genre_ids}/>)}
-                </div>
+        <div>
+            <div className='parent'>
+                {filmsInfo.map(value => <MoviesListCard key={value.id}
+                                                        poster_path={value.poster_path}
+                                                        title={value.title}
+                                                        vote_average={value.vote_average}
+                                                        release_date={value.release_date}
+                                                        genresIds={value.genre_ids}
+                                                        item={value}/>)}
             </div>
-        </Router>
+        </div>
     )
 }

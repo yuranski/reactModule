@@ -6,7 +6,7 @@ export function UserInfo() {
     return (
         <div className="flex alignItems mLeft900">
             <img className="w-Logo" src={logo} alt="a"/>
-            <p className="mLeft11">User</p>
+            <p className="mLeft11 white">User</p>
         </div>
     )
 }

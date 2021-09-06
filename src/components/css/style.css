@@ -1,3 +1,8 @@
+p{
+    margin: 0;
+    padding: 0;
+}
+
 .parent {
     display: flex;
     flex-wrap: wrap;
@@ -7,11 +12,13 @@
 
 .flex {
     display: flex;
-
 }
 
 .alignItems{
     align-items: center;
+}
+.jstContent{
+    justify-content: center;
 }
 
 .mLeft11{
@@ -23,6 +30,10 @@
     margin-left: 900px;
 }
 
+.mTop200{
+    margin-top: 100px;
+}
+
 
 .w-Logo {
     width: 37px;
@@ -30,27 +41,21 @@
 
 .child {
     display: inline-block;
-    margin: 10px 0 0 10px;
-}
-
-p {
-    margin: 0;
-    color: white;
-}
-
-#title {
-    margin: 10px 0 0 0;
-}
-
-#release {
     margin: 0 0 0 10px;
 }
-
-
-body {
-    background: black;
+.mBot10{
+    margin-bottom: 10px;
+}
+.mLeft10{
+    margin-left: 10px;
+}
+.mBot40{
+    margin-bottom: 40px;
 }
 
+.white{
+    color: white;
+}
 
 .scale {
     transition: .2s ease;

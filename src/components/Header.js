@@ -1,35 +1,25 @@
 import {Container, Image, Nav, Navbar} from "react-bootstrap";
 import {useState} from "react";
 import {UserInfo} from "./UserInfo";
-
-export function Header() {
-
+import {Toggle} from "./Themes/Toggle";
 
 
-    //todo зробити білу тему
-    let [theme,setTheme] = useState([])
-    function xxx() {
-        console.log(Navbar.defaultProps.bg)
-        console.log(Navbar.defaultProps.variant)
-        Navbar.defaultProps.variant = "light"
-        // console.log(Navbar.defaultProps.variant)
-    }
 
-
+export function Header({themeToggler}) {
     return (
-        <div>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand>Site by B.Y.</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">2019</Nav.Link>
-                        <Nav.Link href="#features">2020</Nav.Link>
-                        <Nav.Link href="#pricing">2021</Nav.Link>
-                        <button onClick={xxx}>Click</button>
-                        <UserInfo/>
-                    </Nav>
-                </Container>
-            </Navbar>
-        </div>
+
+                <Navbar bg="dark" variant="dark">
+                    <Toggle themeToggler={themeToggler}/>
+
+                    <Container>
+                        <Navbar.Brand>Site by B.Y.</Navbar.Brand>
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">2019</Nav.Link>
+                            <Nav.Link href="#features">2020</Nav.Link>
+                            <Nav.Link href="#pricing">2021</Nav.Link>
+                            <UserInfo/>
+                        </Nav>
+                    </Container>
+                </Navbar>
     )
 }

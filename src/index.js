@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from "react-redux";
+import {Provider, useDispatch} from "react-redux";
 import {createStore} from "redux"
 
 
@@ -14,10 +14,10 @@ let initialStore = {
 let reducer = (state = initialStore, action) => {
     switch (action.type) {
         case "NAME" : {
-            return {...state, filmsInfo: [...state.filmsInfo, action.payload]}
+            return {...state, filmsInfo: action.payload}
         }
         case "GENRES" : {
-            return {...state, genres: [...state.genres, action.payload]}
+            return {...state, genres: action.payload}
         }
         default:
             return state
