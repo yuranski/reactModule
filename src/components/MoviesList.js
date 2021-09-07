@@ -19,7 +19,6 @@ export function MoviesList() {
             discoverMovie(i).then(value => {
                 dispatch({type: 'NAME', payload: value.data.results})
             })
-            console.log(i)
         }
     }
 
@@ -30,7 +29,6 @@ export function MoviesList() {
             discoverMovie(i).then(value => {
                 dispatch({type: 'NAME', payload: value.data.results})
             })
-            console.log(i)
         }
 
     }
