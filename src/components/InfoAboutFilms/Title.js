@@ -1,5 +1,5 @@
-export function Title({title}) {
+export function Title({title, width400}) {
     return (
-        <div><p id="title">{title}</p></div>
+        <div className={width400}><p id="title">{title}</p></div>
     )
 }

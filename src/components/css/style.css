@@ -42,6 +42,10 @@ p{
 .width500 {
     width: 500px;
 }
+.width400 {
+    width: 400px;
+}
+
 
 .child {
     display: inline-block;

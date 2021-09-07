@@ -21,7 +21,7 @@ export function MoviesListCard({item, poster_path, title, vote_average, release_
                 <PosterPreview scale={'scale'} poster_path={poster_path}/>
             </Link>
 
-            <Title title={title}/>
+            <Title width400={'width400'} title={title}/>
             <StarsRating vote_average={vote_average}/>
             <Release mBot40={'mBot40'} release_date={release_date}/>
         </div>

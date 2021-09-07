@@ -4,7 +4,7 @@ import {MoviesListCard} from "./MoviesListCard";
 
 import {Pagination} from "react-bootstrap";
 
-let i = 2
+let i = 1
 
 export function MoviesList() {
 
@@ -14,23 +14,23 @@ export function MoviesList() {
     let dispatch = useDispatch()
 
     function nextPage() {
-        if(i >= 2 && i <= 500) {
+        if(i >= 1 && i <= 500) {
             i++;
             discoverMovie(i).then(value => {
                 dispatch({type: 'NAME', payload: value.data.results})
             })
-        } else {
-            i = 2
+            console.log(i)
         }
     }
 
     function prevPage() {
-        if(i > 2 && i <= 500)
+        if(i > 1 && i <= 500)
         {
             i--;
             discoverMovie(i).then(value => {
                 dispatch({type: 'NAME', payload: value.data.results})
             })
+            console.log(i)
         }
 
     }
