@@ -39,6 +39,10 @@ p{
     width: 37px;
 }
 
+.width500 {
+    width: 500px;
+}
+
 .child {
     display: inline-block;
     margin: 0 0 0 10px;
@@ -51,6 +55,9 @@ p{
 }
 .mBot40{
     margin-bottom: 40px;
+}
+.mTop20{
+    margin-top: 20px;
 }
 
 .white{

@@ -24,11 +24,13 @@ export function MovieInfo(props) {
             <div className='flex jstContent'>
                 <GenreBadge genresIds={props.location.state.genre_ids}/>
             </div>
-            <div className='flex jstContent'>
-                <p>{props.location.state.overview}</p>
+            <div className='flex jstContent '>
+                <div className='width500'>
+                    <p>{props.location.state.overview}</p>
+                </div>
             </div>
             <div className='flex jstContent'>
-                <Button variant="danger" onClick={() => props.history.goBack()}>Назад</Button>
+                <Button variant="danger" onClick={() => props.history.goBack()}>Back</Button>
             </div>
         </div>
     )

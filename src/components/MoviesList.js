@@ -1,25 +1,48 @@
-import {useEffect} from "react";
 import {discoverMovie, genresMovie} from "../sercives/movie.service";
 import {useDispatch, useSelector} from "react-redux";
 import {MoviesListCard} from "./MoviesListCard";
-import {Header} from "./Header";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    withRouter
-} from "react-router-dom";
+
+import {Pagination} from "react-bootstrap";
+
+let i = 2
 
 export function MoviesList() {
 
     let state = useSelector(state => state);
     let {filmsInfo} = state
 
+    let dispatch = useDispatch()
 
+    function nextPage() {
+        if(i >= 2 && i <= 500) {
+            i++;
+            discoverMovie(i).then(value => {
+                dispatch({type: 'NAME', payload: value.data.results})
+            })
+        } else {
+            i = 2
+        }
+    }
+
+    function prevPage() {
+        if(i > 2 && i <= 500)
+        {
+            i--;
+            discoverMovie(i).then(value => {
+                dispatch({type: 'NAME', payload: value.data.results})
+            })
+        }
+
+    }
 
     return (
         <div>
+            <div className='flex justify-content-center mTop20'>
+                <Pagination>
+                    <Pagination.Prev onClick={prevPage}/>
+                    <Pagination.Next onClick={nextPage}/>
+                </Pagination>
+            </div>
             <div className='parent'>
                 {filmsInfo.map(value => <MoviesListCard key={value.id}
                                                         poster_path={value.poster_path}

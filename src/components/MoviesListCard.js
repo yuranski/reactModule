@@ -23,7 +23,7 @@ export function MoviesListCard({item, poster_path, title, vote_average, release_
 
             <Title title={title}/>
             <StarsRating vote_average={vote_average}/>
-            <Release release_date={release_date}/>
+            <Release mBot40={'mBot40'} release_date={release_date}/>
         </div>
     )
 }
